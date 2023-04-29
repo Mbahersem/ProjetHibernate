@@ -1,0 +1,50 @@
+.font {
+    -fx-background-color: rgb(22, 38, 54);
+}
+
+.textfield {
+    -fx-background-color: rgb(22, 38, 54);
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: rgb(103, 120, 136);
+    -fx-text-inner-color: #b9b3c7;
+}
+
+.textfield:focused {
+    -fx-background-color: rgb(22, 38, 54);
+    -fx-text-inner-color: #b9b3c7;
+    -fx-border-width: 0 0 3 0;
+    -fx-border-color: rgb(103, 120, 136);
+    transition: 0.5;
+}
+
+.textfield:hover {
+    -fx-background-color: rgb(22, 38, 54);
+    -fx-text-inner-color: #b9b3c7;
+    -fx-border-width: 0 0 3 0;
+    -fx-border-color: rgb(103, 120, 136);
+    transition: 0.5;
+}
+
+.button {
+    -fx-background-color: rgb(43, 73, 102);
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+}
+
+.button:hover {
+    -fx-background-color: rgb(133, 154, 173);
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    transition: 0.5;
+    -fx-text-fill: #201a2e;
+}
+
+.button:pressed {
+    -fx-background-color: rgb(155, 176, 196);
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    transition: 0.5;
+    -fx-text-fill: #201a2e;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
