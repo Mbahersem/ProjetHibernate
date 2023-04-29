@@ -5,13 +5,23 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="208.0" prefWidth="386.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LogController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="208.0" prefWidth="386.0" styleClass="font" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LogController">
    <children>
-      <Button layoutX="163.0" layoutY="134.0" mnemonicParsing="false" onAction="#connecter" text="Connexion" />
-      <Label layoutX="48.0" layoutY="47.0" text="Identifiant" />
-      <TextField fx:id="tfId" layoutX="133.0" layoutY="43.0" />
-      <PasswordField fx:id="tfMdp" layoutX="133.0" layoutY="87.0" />
-      <Label layoutX="48.0" layoutY="91.0" text="Mot de passe" />
+      <Button layoutX="163.0" layoutY="134.0" mnemonicParsing="false" onAction="#connecter" stylesheets="@style.css" text="Connexion" textFill="#b9b3c7">
+         <font>
+            <Font name="Ebrima" size="13.0" />
+         </font></Button>
+      <Label layoutX="48.0" layoutY="47.0" text="Identifiant" textFill="#b9b3c7">
+         <font>
+            <Font name="Ebrima" size="14.0" />
+         </font></Label>
+      <TextField fx:id="tfId" layoutX="144.0" layoutY="44.0" styleClass="textfield" stylesheets="@style.css" />
+      <PasswordField fx:id="tfMdp" layoutX="144.0" layoutY="88.0" styleClass="textfield" stylesheets="@style.css" />
+      <Label layoutX="48.0" layoutY="91.0" text="Mot de passe" textFill="#b9b3c7">
+         <font>
+            <Font name="Ebrima" size="14.0" />
+         </font></Label>
    </children>
 </AnchorPane>
