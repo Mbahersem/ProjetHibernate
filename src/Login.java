@@ -44,8 +44,8 @@ public class Login extends Application{
         Session session = sessionFactory.openSession();
         
         List<code.Membre> membre = session.createQuery("from Membre").list();
-        List<code.Emprunt> emprunt = session.createQuery("from Emprunt").list();
-        List<code.Livre> livre = session.createQuery("from Livre").list();
+        // List<code.Emprunt> emprunt = session.createQuery("from Emprunt").list();
+        // List<code.Livre> livre = session.createQuery("from Livre").list();
         System.out.println();
 
         launch(args);
