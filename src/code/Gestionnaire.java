@@ -2,19 +2,19 @@ package code;
 
 public class Gestionnaire {
     
-    private int identifiant;
+    private String identifiant;
     private String motDePasse;
 
     //Consrtuctors
     public Gestionnaire() {
     }
-    public Gestionnaire(int identifiant, String motDePasse) {
+    public Gestionnaire(String identifiant, String motDePasse) {
         this.identifiant = identifiant;
         this.motDePasse = motDePasse;
     }
 
     //Setters
-    public void setIdentifiant(int identifiant) {
+    public void setIdentifiant(String identifiant) {
         this.identifiant = identifiant;
     }
     public void setMotDePasse(String motDePasse) {
@@ -22,7 +22,7 @@ public class Gestionnaire {
     }
 
     //Getters
-    public int getIdentifiant() {
+    public String getIdentifiant() {
         return identifiant;
     }
     public String getMotDePasse() {

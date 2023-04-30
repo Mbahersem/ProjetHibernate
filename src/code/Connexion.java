@@ -11,8 +11,10 @@ public interface Connexion {
         
     }
 
-    public default void connecter(int identifiant, String motDePasse) {
+    public static boolean connecter(String identifiant, String motDePasse) {
         
+        return Admin.verifier(identifiant,motDePasse);
+
     }
 
 }

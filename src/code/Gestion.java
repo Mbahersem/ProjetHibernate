@@ -1,6 +1,25 @@
 package code;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.boot.Metadata;
+import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.registry.StandardServiceRegistry;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.cfg.Configuration;
+
 public interface Gestion {
+
+    public default boolean enregistrer(String identifiant, String motDePasse) {
+        
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        session.save(new Gestionnaire(identifiant, motDePasse));
+        session.getTransaction().commit();
+        session.close();
+        
+        return true;
+    }
     
     public default void saisieID() {
         
