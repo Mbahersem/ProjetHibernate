@@ -1,0 +1,30 @@
+.onglet {
+    -fx-background-color: rgb(41, 67, 92);
+}
+
+.main {
+    -fx-background-color: rgb(21, 35, 48);
+}
+
+.but-onglet {
+    -fx-background-color: rgb(41, 67, 92);
+    -fx-border-width: 0;
+}
+
+.but-onglet:hover {
+    -fx-background-color: rgb(71, 106, 138);
+    -fx-border-width: 0;
+    transition: 0.3;
+}
+
+.but-onglet:pressed {
+    -fx-background-color: rgb(21, 35, 48);
+    -fx-border-width: 0 4 0 0;
+    -fx-border-color: white;
+}
+
+.but-onglet:focused {
+    -fx-background-color: rgb(21, 35, 48);
+    -fx-border-width: 0 4 0 0;
+    -fx-border-color: white;
+}

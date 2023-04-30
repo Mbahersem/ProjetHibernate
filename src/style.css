@@ -29,14 +29,16 @@
     -fx-background-color: rgb(43, 73, 102);
     -fx-border-radius: 30;
     -fx-background-radius: 30;
+    -fx-border-width: 0;
 }
 
 .button:hover {
     -fx-background-color: rgb(133, 154, 173);
     -fx-border-radius: 30;
     -fx-background-radius: 30;
-    transition: 0.5;
+    transition: 0.7;
     -fx-text-fill: #201a2e;
+    -fx-border-width: 0;
 }
 
 .button:pressed {
@@ -47,4 +49,5 @@
     -fx-text-fill: #201a2e;
     -fx-scale-x: 1.1;
     -fx-scale-y: 1.1;
+    -fx-border-width: 0;
 }

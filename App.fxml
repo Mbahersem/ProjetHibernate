@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="495.0" prefWidth="751.0" styleClass="main" stylesheets="@style2.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="code.AppController">
+   <children>
+      <VBox layoutX="-2.0" layoutY="-4.0" prefHeight="501.0" prefWidth="199.0" styleClass="onglet" stylesheets="@style2.css">
+         <children>
+            <Button fx:id="btOngInsc" mnemonicParsing="false" onMouseClicked="#ongletInsc" prefHeight="66.0" prefWidth="199.0" styleClass="but-onglet" stylesheets="@style2.css" text="Inscription" textFill="#fceeee">
+               <font>
+                  <Font name="Ebrima" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="butOngMem" mnemonicParsing="false" onMouseClicked="#ongletMembres" prefHeight="66.0" prefWidth="199.0" styleClass="but-onglet" stylesheets="@style2.css" text="Membres" textFill="#fceeee">
+               <font>
+                  <Font name="Ebrima" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="butOngEmp" mnemonicParsing="false" onMouseClicked="#ongletEmprunts" prefHeight="66.0" prefWidth="199.0" styleClass="but-onglet" stylesheets="@style2.css" text="Emprunts" textFill="#fceeee">
+               <font>
+                  <Font name="Ebrima" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="butOngInv" mnemonicParsing="false" onMouseClicked="#ongletInventaire" prefHeight="66.0" prefWidth="199.0" styleClass="but-onglet" stylesheets="@style2.css" text="Inventaire" textFill="#fceeee">
+               <font>
+                  <Font name="Ebrima" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <StackPane layoutX="201.0" layoutY="75.0" prefHeight="420.0" prefWidth="546.0">
+         <children>
+            <Pane fx:id="pnInv" layoutX="10.0" prefHeight="487.0" prefWidth="551.0">
+               <children>
+                  <TableView fx:id="tabInv" layoutX="10.0" prefHeight="420.0" prefWidth="498.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="C1" />
+                      <TableColumn prefWidth="75.0" text="C2" />
+                    </columns>
+                  </TableView>
+               </children>
+            </Pane>
+            <Pane fx:id="pnEmprunt" layoutX="10.0" prefHeight="420.0" prefWidth="498.0">
+               <children>
+                  <TableView fx:id="tabEmp" layoutX="10.0" prefHeight="420.0" prefWidth="498.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="C1" />
+                      <TableColumn prefWidth="75.0" text="C2" />
+                    </columns>
+                  </TableView>
+               </children>
+            </Pane>
+            <Pane fx:id="pnMem" layoutX="10.0" prefHeight="420.0" prefWidth="498.0">
+               <children>
+                  <TableView fx:id="tabMem" layoutX="10.0" prefHeight="420.0" prefWidth="498.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="C1" />
+                      <TableColumn prefWidth="75.0" text="C2" />
+                    </columns>
+                  </TableView>
+               </children>
+            </Pane>
+            <Pane fx:id="pnInsc" layoutX="10.0" prefHeight="420.0" prefWidth="498.0" styleClass="textfield" stylesheets="@style.css">
+               <children>
+                  <Button fx:id="btEnregistrerMembre" layoutX="248.0" layoutY="244.0" mnemonicParsing="false" stylesheets="@style.css" text="Enregistrer" textFill="#fceeee">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="tfNom" layoutX="50.0" layoutY="40.0" text="Nom" textFill="#fceeee">
+                     <font>
+                        <Font name="Candara" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="139.0" layoutY="34.0" styleClass="textfield" stylesheets="@style.css" />
+                  <Label fx:id="tfPrenom" layoutX="50.0" layoutY="78.0" text="Prénom" textFill="#fceeee">
+                     <font>
+                        <Font name="Candara" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="139.0" layoutY="72.0" styleClass="textfield" stylesheets="@style.css" />
+                  <Label fx:id="tfTel" layoutX="50.0" layoutY="116.0" text="Téléphone" textFill="#fceeee">
+                     <font>
+                        <Font name="Candara" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="139.0" layoutY="110.0" styleClass="textfield" stylesheets="@style.css" />
+                  <Label fx:id="tfCNI" layoutX="54.0" layoutY="159.0" text="CNI" textFill="#fceeee">
+                     <font>
+                        <Font name="Candara" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="139.0" layoutY="154.0" styleClass="textfield" stylesheets="@style.css" />
+               </children>
+            </Pane>
+         </children>
+      </StackPane>
+      <Label fx:id="lblHead" layoutX="265.0" layoutY="28.0" text="Inscription" textFill="#fceeee">
+         <font>
+            <Font name="Candara" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

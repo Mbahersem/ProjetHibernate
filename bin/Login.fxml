@@ -9,7 +9,6 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="208.0" prefWidth="386.0" styleClass="font" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LogController">
    <children>
-<<<<<<< HEAD
       <Button layoutX="163.0" layoutY="134.0" mnemonicParsing="false" onAction="#connecter" stylesheets="@style.css" text="Connexion" textFill="#b9b3c7">
          <font>
             <Font name="Ebrima" size="13.0" />
@@ -24,12 +23,5 @@
          <font>
             <Font name="Ebrima" size="14.0" />
          </font></Label>
-=======
-      <Button layoutX="163.0" layoutY="134.0" mnemonicParsing="false" onAction="#connecter" text="Connexion" />
-      <Label layoutX="48.0" layoutY="47.0" text="Identifiant" />
-      <TextField fx:id="tfId" layoutX="133.0" layoutY="43.0" style="-fx-border-width: 0;" />
-      <PasswordField fx:id="tfMdp" layoutX="133.0" layoutY="87.0" />
-      <Label layoutX="48.0" layoutY="91.0" text="Mot de passe" />
->>>>>>> 0824ddb1496fe932009f2080d687400853ba48d8
    </children>
 </AnchorPane>

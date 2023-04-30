@@ -1,5 +1,7 @@
 
 
+import code.App;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
@@ -14,6 +16,7 @@ public class LogController {
     
     @FXML
     public void connecter(ActionEvent event) {
-        System.out.println(tfId.getText());
+        App application = new App();
+        application.show();
     }
 }

@@ -14,7 +14,7 @@
     -fx-text-inner-color: #b9b3c7;
     -fx-border-width: 0 0 3 0;
     -fx-border-color: rgb(103, 120, 136);
-    transition: 0.5;
+    transition: 0.3;
 }
 
 .textfield:hover {
@@ -22,7 +22,7 @@
     -fx-text-inner-color: #b9b3c7;
     -fx-border-width: 0 0 3 0;
     -fx-border-color: rgb(103, 120, 136);
-    transition: 0.5;
+    transition: 0.3;
 }
 
 .button {
@@ -30,13 +30,14 @@
     -fx-border-radius: 30;
     -fx-background-radius: 30;
     -fx-border-width: 0;
+    -fx-text-fill: #fceeee;
 }
 
 .button:hover {
     -fx-background-color: rgb(133, 154, 173);
     -fx-border-radius: 30;
     -fx-background-radius: 30;
-    transition: 0.7;
+    transition: 0.3;
     -fx-text-fill: #201a2e;
     -fx-border-width: 0;
 }
@@ -45,7 +46,7 @@
     -fx-background-color: rgb(155, 176, 196);
     -fx-border-radius: 30;
     -fx-background-radius: 30;
-    transition: 0.5;
+    transition: 0.3;
     -fx-text-fill: #201a2e;
     -fx-scale-x: 1.1;
     -fx-scale-y: 1.1;

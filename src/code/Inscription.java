@@ -1,4 +1,4 @@
-package java;
+package code;
 
 public interface Inscription {
     
