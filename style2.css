@@ -28,3 +28,9 @@
     -fx-border-width: 0 4 0 0;
     -fx-border-color: white;
 }
+
+.tab {
+    -fx-background-color: rgb(85, 110, 134);
+    -fx-text-fill: #fceeee;
+    -fx-font-family: Candara;
+}

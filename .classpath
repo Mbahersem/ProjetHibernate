@@ -9,5 +9,6 @@
 		</accessrules>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Hibernate"/>
+	<classpathentry kind="lib" path="C:/Users/user/Downloads/mysql-connector-java-8.0.30/mysql-connector-java-8.0.30/mysql-connector-java-8.0.30.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

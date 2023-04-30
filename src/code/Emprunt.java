@@ -1,14 +1,23 @@
 package code;
 
 import java.sql.Date;
+import javax.persistence.*;
 
+@Entity
+@Table(name = "membre")
 public class Emprunt {
-    
+    @Id
+    @Column(name = "idEmprunt")
     private int identifiant;
+    @Column(name = "dateDeb")
     private Date dateEmprunt;
+    @Column(name = "dateRendu")
     private Date dateRendu;
-
+    @ManyToOne
+    @JoinColumn(name = "idLivre")
     private Livre livre;
+    @ManyToOne
+    @JoinColumn(name = "id")
     private Membre membre;
     
     //Constructors

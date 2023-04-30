@@ -41,17 +41,7 @@
          <children>
             <Pane fx:id="pnInv" layoutX="10.0" prefHeight="487.0" prefWidth="551.0">
                <children>
-                  <TableView fx:id="tabInv" layoutX="10.0" prefHeight="420.0" prefWidth="498.0">
-                    <columns>
-                      <TableColumn prefWidth="75.0" text="C1" />
-                      <TableColumn prefWidth="75.0" text="C2" />
-                    </columns>
-                  </TableView>
-               </children>
-            </Pane>
-            <Pane fx:id="pnEmprunt" layoutX="10.0" prefHeight="420.0" prefWidth="498.0">
-               <children>
-                  <TableView fx:id="tabEmp" layoutX="10.0" prefHeight="420.0" prefWidth="498.0">
+                  <TableView fx:id="tabInv" layoutX="10.0" prefHeight="420.0" prefWidth="498.0" styleClass="tab" stylesheets="@style2.css">
                     <columns>
                       <TableColumn prefWidth="75.0" text="C1" />
                       <TableColumn prefWidth="75.0" text="C2" />
@@ -61,17 +51,30 @@
             </Pane>
             <Pane fx:id="pnMem" layoutX="10.0" prefHeight="420.0" prefWidth="498.0">
                <children>
-                  <TableView fx:id="tabMem" layoutX="10.0" prefHeight="420.0" prefWidth="498.0">
+                  <TableView fx:id="tabMem" layoutX="10.0" prefHeight="420.0" prefWidth="498.0" styleClass="tab" stylesheets="@style2.css">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="C1" />
-                      <TableColumn prefWidth="75.0" text="C2" />
+                      <TableColumn fx:id="colIdMem" prefWidth="75.0" styleClass="tab" text="Id" />
+                      <TableColumn fx:id="colNomMem" prefWidth="75.0" styleClass="tab" text="Nom" />
+                        <TableColumn fx:id="colPrenomMem" prefWidth="75.0" styleClass="tab" text="Prénom" />
+                        <TableColumn fx:id="colTelMem" prefWidth="75.0" styleClass="tab" text="Téléphone" />
+                        <TableColumn fx:id="colCNIMem" prefWidth="75.0" styleClass="tab" text="CNI" />
+                    </columns>
+                  </TableView>
+               </children>
+            </Pane>
+            <Pane fx:id="pnEmprunt" layoutX="10.0" prefHeight="420.0" prefWidth="498.0">
+               <children>
+                  <TableView fx:id="tabEmp" layoutX="10.0" prefHeight="420.0" prefWidth="498.0" styleClass="tab" stylesheets="@style2.css">
+                    <columns>
+                      <TableColumn prefWidth="75.0" styleClass="tab" text="C1" />
+                      <TableColumn prefWidth="75.0" styleClass="tab" text="C2" />
                     </columns>
                   </TableView>
                </children>
             </Pane>
             <Pane fx:id="pnInsc" layoutX="10.0" prefHeight="420.0" prefWidth="498.0" styleClass="textfield" stylesheets="@style.css">
                <children>
-                  <Button fx:id="btEnregistrerMembre" layoutX="248.0" layoutY="244.0" mnemonicParsing="false" stylesheets="@style.css" text="Enregistrer" textFill="#fceeee">
+                  <Button fx:id="btEnregistrerMembre" layoutX="248.0" layoutY="244.0" mnemonicParsing="false" onMouseClicked="#enregistrer" stylesheets="@style.css" text="Enregistrer" textFill="#fceeee">
                      <font>
                         <Font size="13.0" />
                      </font>
