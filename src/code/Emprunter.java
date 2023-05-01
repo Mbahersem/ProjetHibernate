@@ -15,7 +15,7 @@ public interface Emprunter {
     
     public static boolean emprunter(int idLivre, int idMembre) {
         
-        Session session = sessionFactory.openSession();
+        Session session = Login.sessionFactory.openSession();
         session.beginTransaction();
         List<Livre> result1 = session.createQuery("from Livre " +
                                                         "where idLivre = " + idLivre).list();

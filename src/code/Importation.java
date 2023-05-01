@@ -17,7 +17,7 @@ public interface Importation {
 
     public default boolean enregistrer(String titre, String auteur, int nombreExemplaires) {
         
-        Session session = sessionFactory.openSession();
+        Session session = Login.sessionFactory.openSession();
         session.beginTransaction();
         session.save(new Livre(titre, auteur, nombreExemplaires));
         session.getTransaction().commit();

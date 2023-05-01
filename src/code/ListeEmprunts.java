@@ -14,7 +14,7 @@ public interface ListeEmprunts {
 
     public static List<Emprunt> afficher() {
 
-        Session session = sessionFactory.openSession();
+        Session session = Login.sessionFactory.openSession();
         session.beginTransaction();
         List<Emprunt> result = session.createQuery("from Emprunt").list();
         session.getTransaction().commit();

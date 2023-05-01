@@ -12,7 +12,7 @@ public interface Gestion {
 
     public default boolean enregistrer(String identifiant, String motDePasse) {
         
-        Session session = sessionFactory.openSession();
+        Session session = Login.sessionFactory.openSession();
         session.beginTransaction();
         session.save(new Gestionnaire(identifiant, motDePasse));
         session.getTransaction().commit();

@@ -15,7 +15,13 @@ public interface Inscription {
         
     // }
 
-    public void enregistrer(String nom, String prenom, String numeroTelephone, String numeroCNI) {
+    public static void enregistrer(String nom, String prenom, String numeroTelephone, String numeroCNI) {
+        
+        Session session = Login.sessionFactory.openSession();
+    	session.beginTransaction();
+        session.save(new code.Membre(nom, prenom, numeroTelephone, numeroCNI));
+        session.getTransaction().commit();
+        session.close();
         
     }
 

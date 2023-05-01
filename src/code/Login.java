@@ -16,7 +16,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Login extends Application implements Inscription{
+public class Login extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
@@ -47,13 +47,5 @@ public class Login extends Application implements Inscription{
         launch(args);
     }
 
-    public void enregistrer(String nom, String prenom, String numeroTelephone, String numeroCNI) {
-        Session session = sessionFactory.openSession();
-    	session.beginTransaction();
-        session.save(new code.Membre(nom, prenom, numeroTelephone, numeroCNI));
-        session.getTransaction().commit();
-        session.close();
-        
-    }
 
 }

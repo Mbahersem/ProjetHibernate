@@ -15,7 +15,7 @@ public interface ListeLivres {
 
     public static List<Livre> afficher() {
 
-        Session session = sessionFactory.openSession();
+        Session session = Login.sessionFactory.openSession();
         session.beginTransaction();
         List<Livre> result = session.createQuery("from Livre").list();
         session.getTransaction().commit();
