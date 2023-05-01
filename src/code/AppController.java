@@ -44,7 +44,7 @@ public class AppController {
     private Button btnActualiserEmp;
 
     @FXML
-    private Button btnActualiserEmp1;
+    private Button btnActualiserInventaire;
 
     @FXML
     private Button btnAjoutEmprunt;
@@ -102,6 +102,30 @@ public class AppController {
     @FXML
     private TableColumn<Membre, String>  colCNIMem = new TableColumn<Membre, String>("CNI");
     colCNIMem.setCellValueFactory(new PropertyValueFactory("numeroCNI"));
+
+    @FXML
+    private TableColumn<?, ?> colDateEmp;
+
+    @FXML
+    private TableColumn<?, ?> colDateRend;
+
+    @FXML
+    private TableColumn<?, ?> colIdEmp;
+
+    @FXML
+    private TableColumn<?, ?> colIdLivre;
+
+    @FXML
+    private TableColumn<?, ?> colInvAuteur;
+
+    @FXML
+    private TableColumn<?, ?> colInvIdLiv;
+
+    @FXML
+    private TableColumn<?, ?> colInvQte;
+
+    @FXML
+    private TableColumn<?, ?> colInvTitre;
 
     @FXML
     private TextField tfCNI;
