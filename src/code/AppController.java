@@ -19,9 +19,17 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.collections.ObservableList;
+import javafx.collections.FXCollections;
 
 public class AppController {
     
+
+    ObservableList<Membre> listeMembres = FXCollections.observableList(ListeMembres.afficher());
+
+    ObservableList<Livre> listeLivre = FXCollections.observableList(ListeLivres.afficher());
+
+    ObservableList<Emprunt> listeEmprunts = FXCollections.observableList(ListeEmprunts.afficher());
 
     @FXML
     private Button btAjoutLiv;
@@ -48,70 +56,52 @@ public class AppController {
     private Button butOngInv;
 
     @FXML
-    private Button butOngMem;
-
-    @FXML
-    private TableColumn<?, ?> colCNIMem;
-
-    @FXML
-    private TableColumn<?, ?> colDateEmp;
-
-    @FXML
-    private TableColumn<?, ?> colDateRend;
-
-    @FXML
-    private TableColumn<?, ?> colIdEmp;
-
-    @FXML
-    private TableColumn<?, ?> colIdLivre;
-
-    @FXML
-    private TableColumn<?, ?> colIdMem;
-
-    @FXML
-    private TableColumn<?, ?> colInvAuteur;
-
-    @FXML
-    private TableColumn<?, ?> colInvIdLiv;
-
-    @FXML
-    private TableColumn<?, ?> colInvQte;
-
-    @FXML
-    private TableColumn<?, ?> colInvTitre;
-
-    @FXML
-    private TableColumn<?, ?> colNomMem;
-
-    @FXML
-    private TableColumn<?, ?> colPrenomMem;
-
-    @FXML
-    private TableColumn<?, ?> colTelMem;
-
+    private Button butOngMem;    
+    
     @FXML
     private Label lblHead;
-
+    
     @FXML
     private Pane pnEmprunt;
-
+    
     @FXML
     private Pane pnInsc;
-
+    
     @FXML
     private Pane pnInv;
-
+    
     @FXML
     private Pane pnMem;
-
+    
     @FXML
     private TableView<?> tabEmp;
-
+    
     @FXML
     private TableView<?> tabInv;
+    
+    @FXML
+    private TableView<Membre> tabMem = new TableView<Membre>();
+    tabMem.setItems(listeMembres)
+    
+    @FXML
+    private TableColumn<Membre, Integer> colIdMem = new TableColumn<Membre, Integer>("Id");
+    colIdMem.setCellValueFactory(new PropertyValueFactory("identifiant"));
+    
+    @FXML
+    private TableColumn<Membre, String> colNomMem = new TableColumn<Membre, String>("Nom");
+    colNomMem.setCellValueFactory(new PropertyValueFactory("nom"));
+    
+    @FXML
+    private TableColumn<Membre, String> colPrenomMem = new TableColumn<Membre, String>("Prénom");
+    colPrenomMem.setCellValueFactory(new PropertyValueFactory("prenom"));
 
     @FXML
-    private TableView<?> tabMem;
+    private TableColumn<Membre, String> colTelMem = new TableColumn<Membre, String>("Téléphone");
+    colTelMem.setCellValueFactory(new PropertyValueFactory("numeroTelephone"));
+    
+    @FXML
+    private TableColumn<Membre, String>  colCNIMem = new TableColumn<Membre, String>("CNI");
+    colCNIMem.setCellValueFactory(new PropertyValueFactory("numeroCNI"));
 
     @FXML
     private TextField tfCNI;
@@ -138,11 +128,13 @@ public class AppController {
     @FXML
     void actualiserEmprunt(MouseEvent event) {
 
+        listeEmprunts = FXCollections.observableList(ListeEmprunts.afficher());
     }
 
     @FXML
     void actualiserLivreTab(MouseEvent event) {
 
+        listeLivre = FXCollections.observableList(ListeLivres.afficher());
     }
 
     @FXML
