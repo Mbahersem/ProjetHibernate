@@ -182,13 +182,14 @@ public class AppController {
         colDateEmp = new TableColumn<Emprunt, Date>("Date d'emprunt");
         colDateEmp.setCellValueFactory(new PropertyValueFactory("dateEmprunt"));
         colDateRend = new TableColumn<Emprunt, Date>("Date de rendu");
-        colDateEmp.setCellValueFactory(new PropertyValueFactory("dateRendu"));
+        colDateRend.setCellValueFactory(new PropertyValueFactory("dateRendu"));
         colIdEmp = new TableColumn<Emprunt, Integer>("Id Emprunt");
         colIdEmp.setCellValueFactory(new PropertyValueFactory("identifiant"));
         colIdLivre = new TableColumn<Emprunt, Integer>("Id Livre");
         colIdLivre.setCellValueFactory(new PropertyValueFactory("livre.getIdentifiant()"));
         colIdEmMem = new TableColumn<Emprunt, Integer>("Id Membre");
         colIdEmMem.setCellValueFactory(new PropertyValueFactory("membre.getIdentifiant()"));
+        tabEmp.getColumns().addAll(colIdEmp,colDateEmp, colDateRend,colIdLivre,colIdEmMem);
 
         tabInv = new TableView<Livre>() ;
         tabInv.setItems(listeLivres);
@@ -200,6 +201,7 @@ public class AppController {
         colInvQte.setCellValueFactory(new PropertyValueFactory("nombreExemplaires"));
         colInvTitre = new TableColumn<Livre, String>("Titre");
         colInvTitre.setCellValueFactory(new PropertyValueFactory("titre"));
+        tabInv.getColumns().addAll( colInvIdLiv,colInvTitre, colInvAuteur,colInvQte);
 
         tabMem = new TableView<Membre>();
         tabMem.setItems(listeMembres);
@@ -213,6 +215,7 @@ public class AppController {
         colTelMem.setCellValueFactory(new PropertyValueFactory("numeroTelephone"));
         colCNIMem = new TableColumn<Membre, String>("CNI");
         colCNIMem.setCellValueFactory(new PropertyValueFactory("numeroCNI"));
+        tabMem.getColumns().addAll(colIdMem,colNomMem,colPrenomMem,colTelMem,colCNIMem);
             
     }
     
