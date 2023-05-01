@@ -2,13 +2,18 @@ package code;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 
 public class LogController {
     @FXML
+    private Label lblStatutCon;
+
+    @FXML
     private TextField tfId;
+
     @FXML
     private PasswordField tfMdp;
     
@@ -19,12 +24,14 @@ public class LogController {
         String motDePasse = String.valueOf(tfMdp.getText());
 
         if (Connexion.connecter(identifiant,motDePasse)) {
+            tfId.setText("");
+            tfMdp.setText("");
+            lblStatutCon.setText("Connexion r√©ussie !");
             App application = new App();
             application.show(); 
         }
         else {
-        	tfId.setText("Identifiant erronÈ");
-        	tfMdp.setText("Ou mot de passe oubliÈ");
+        	lblStatutCon.setText("Identifiant ou mot de passe erron√©, veuillez r√©essayer...");
         }
     }
 }

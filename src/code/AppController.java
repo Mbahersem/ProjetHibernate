@@ -73,6 +73,15 @@ public class AppController {
     
     @FXML
     private Label lblHead;
+
+    @FXML
+    private Label lblStatutEmp;
+
+    @FXML
+    private Label lblStatutLiv;
+
+    @FXML
+    private Label lblStatutMem;
     
     @FXML
     private Pane pnEmprunt;
@@ -234,7 +243,9 @@ public class AppController {
         int membre = Integer.parseInt(tfEmpMem.getText());
 
         if (Emprunter.emprunter(livre,membre)) {
-             
+             tfEmpMem.setText("");
+             tfEmpLiv.setText("");
+             lblStatutEmp.setText("Nouvel emprunt !");
          }
     }
 
@@ -247,27 +258,32 @@ public class AppController {
         int nombreExemplaires = Integer.parseInt(tfNbreExemp.getText());
 
         if (Importation.enregistrer(titre,auteur,nombreExemplaires)) {
-            
+            tfAuteur.setText("");
+            tfTitre.setText("");
+            tfNbreExemp.setText("");
+            lblStatutLiv.setText("Nouveau livre !");
+
        }
     }
 
 
     @FXML
     void ongletEmprunts(MouseEvent event) {
-    	
+    	lblStatutEmp.setText("");
     	pnEmprunt.toFront();
         lblHead.setText("Emprunt");
     }
 
     @FXML
     void ongletInsc(MouseEvent event) {
+        lblStatutMem.setText("");
     	pnInsc.toFront();
         lblHead.setText("Inscription");
     }
 
     @FXML
     void ongletInventaire(MouseEvent event) {
-    	
+    	lblStatutLiv.setText("");
     	pnInv.toFront();
         lblHead.setText("Inventaire");
     }
@@ -282,6 +298,11 @@ public class AppController {
     @FXML
     void enregistrer(MouseEvent event) {
         Inscription.enregistrer(tfNom.getText(), tfPrenom.getText(), tfTel.getText(), tfCNI.getText());
+        tfNom.setText("");
+        tfPrenom.setText("");
+        tfTel.setText("");
+        tfCNI.setText("");
+        lblStatutMem.setText("Nouveau membre ajouté !");
     }
 
 }
