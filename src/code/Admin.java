@@ -15,14 +15,14 @@ public interface Admin {
     
     public static boolean verifier(String identifiant, String motDePasse) {
         
-        Session session = sessionFactory.openSession();
-        session.beginTransaction();
-        List<Gestionnaire> result = session.createQuery("from Gestionnaire " +
-                                                        "where idGestionnaire = " + identifiant + "and motDePasse = " + motDePasse).list();
-        session.getTransaction().commit();
-        session.close();
-
-        return !result.isEmpty();
+        String name = "MH";
+        String pass = "123456";
+        
+        if(identifiant.equals(name) && motDePasse.equals(pass)) {
+        	return true;
+        }
+        
+        return false;
 
     }
 
