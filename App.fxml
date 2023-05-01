@@ -63,7 +63,7 @@
                       <TableColumn fx:id="colDateEmp" prefWidth="75.0" styleClass="tab" text="Date d'emprunt" />
                         <TableColumn fx:id="colDateRend" prefWidth="75.0" styleClass="tab" text="Date de rendu" />
                         <TableColumn fx:id="colIdLivre" prefWidth="75.0" styleClass="tab" text="Id Livre" />
-                        <TableColumn fx:id="colIdMem" prefWidth="75.0" styleClass="tab" text="Id Membre" />
+                        <TableColumn fx:id="colIdEmMem" prefWidth="75.0" styleClass="tab" text="Id Membre" />
                     </columns>
                   </TableView>
                   <GridPane layoutX="4.0" layoutY="17.0" prefHeight="116.0" prefWidth="504.0" styleClass="main" stylesheets="@style2.css">
