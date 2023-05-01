@@ -26,11 +26,11 @@ import javafx.collections.FXCollections;
 
 public class AppController {
 
-    ObservableList<Membre> listeMembres = FXCollections.observableList(ListeMembres.afficher());
+    ObservableList<Membre> listeMembres;
 
-    ObservableList<Livre> listeLivres = FXCollections.observableList(ListeLivres.afficher());
+    ObservableList<Livre> listeLivres;
 
-    ObservableList<Emprunt> listeEmprunts = FXCollections.observableList(ListeEmprunts.afficher());
+    ObservableList<Emprunt> listeEmprunts;
 
     @FXML
     private Button btAjoutLiv;
@@ -160,6 +160,52 @@ public class AppController {
     @FXML
     private TextField tfTel;
 
+    public void initialize() {
+
+        listeMembres = FXCollections.observableList(ListeMembres.afficher());
+
+        listeLivres = FXCollections.observableList(ListeLivres.afficher());
+    
+        listeEmprunts = FXCollections.observableList(ListeEmprunts.afficher());
+
+        tabEmp = new TableView<Emprunt>();
+        tabEmp.setItems(listeEmprunts); 
+        colDateEmp = new TableColumn<Emprunt, Date>("Date d'emprunt");
+        colDateEmp.setCellValueFactory(new PropertyValueFactory("dateEmprunt"));
+        colDateRend = new TableColumn<Emprunt, Date>("Date de rendu");
+        colDateEmp.setCellValueFactory(new PropertyValueFactory("dateRendu"));
+        colIdEmp = new TableColumn<Emprunt, Integer>("Id Emprunt");
+        colIdEmp.setCellValueFactory(new PropertyValueFactory("identifiant"));
+        colIdLivre = new TableColumn<Emprunt, Integer>("Id Livre");
+        colIdLivre.setCellValueFactory(new PropertyValueFactory("livre.getIdentifiant()"));
+        colIdEmMem = new TableColumn<Emprunt, Integer>("Id Membre");
+        colIdEmMem.setCellValueFactory(new PropertyValueFactory("membre.getIdentifiant()"));
+
+        tabInv = new TableView<Livre>() ;
+        tabInv.setItems(listeLivres);
+        colInvIdLiv = new TableColumn<Livre, Integer>("Id Livre");
+        colInvIdLiv.setCellValueFactory(new PropertyValueFactory("identifiant"));
+        colInvAuteur = new TableColumn<Livre, String>("Auteur");
+        colInvAuteur.setCellValueFactory(new PropertyValueFactory("auteur"));
+        colInvQte = new TableColumn<Livre, Integer>("Nombre d'exemplaires");
+        colInvQte.setCellValueFactory(new PropertyValueFactory("nombreExemplaires"));
+        colInvTitre = new TableColumn<Livre, String>("Titre");
+        colInvTitre.setCellValueFactory(new PropertyValueFactory("titre"));
+
+        tabMem = new TableView<Membre>();
+        tabMem.setItems(listeMembres);
+        colIdMem = new TableColumn<Membre, Integer>("Id");
+        colIdMem.setCellValueFactory(new PropertyValueFactory("identifiant"));
+        colNomMem = new TableColumn<Membre, String>("Nom");
+        colNomMem.setCellValueFactory(new PropertyValueFactory("nom"));
+        colPrenomMem = new TableColumn<Membre, String>("Prénom");
+        colPrenomMem.setCellValueFactory(new PropertyValueFactory("prenom"));
+        colTelMem = new TableColumn<Membre, String>("Téléphone");
+        colTelMem.setCellValueFactory(new PropertyValueFactory("numeroTelephone"));
+        colCNIMem = new TableColumn<Membre, String>("CNI");
+        colCNIMem.setCellValueFactory(new PropertyValueFactory("numeroCNI"));
+            
+    }
     
     @FXML
     void actualiserEmprunt(MouseEvent event) {
@@ -208,18 +254,6 @@ public class AppController {
 
     @FXML
     void ongletEmprunts(MouseEvent event) {
-    	tabEmp = new TableView<Emprunt>();
-        tabEmp.setItems(listeEmprunts);
-        colDateEmp = new TableColumn<Emprunt, Date>("Date d'emprunt");
-        colDateEmp.setCellValueFactory(new PropertyValueFactory("dateEmprunt"));
-        colDateRend = new TableColumn<Emprunt, Date>("Date de rendu");
-        colDateEmp.setCellValueFactory(new PropertyValueFactory("dateRendu"));
-        colIdEmp = new TableColumn<Emprunt, Integer>("Id Emprunt");
-        colIdEmp.setCellValueFactory(new PropertyValueFactory("identifiant"));
-        colIdLivre = new TableColumn<Emprunt, Integer>("Id Livre");
-        colIdLivre.setCellValueFactory(new PropertyValueFactory("livre.getIdentifiant()"));
-        colIdEmMem = new TableColumn<Emprunt, Integer>("Id Membre");
-        colIdEmMem.setCellValueFactory(new PropertyValueFactory("membre.getIdentifiant()"));
     	
     	pnEmprunt.toFront();
         lblHead.setText("Emprunt");
@@ -233,16 +267,6 @@ public class AppController {
 
     @FXML
     void ongletInventaire(MouseEvent event) {
-    	tabInv = new TableView<Livre>() ;
-        tabInv.setItems(listeLivres);
-        colInvIdLiv = new TableColumn<Livre, Integer>("Id Livre");
-        colInvIdLiv.setCellValueFactory(new PropertyValueFactory("identifiant"));
-        colInvAuteur = new TableColumn<Livre, String>("Auteur");
-        colInvAuteur.setCellValueFactory(new PropertyValueFactory("auteur"));
-        colInvQte = new TableColumn<Livre, Integer>("Nombre d'exemplaires");
-        colInvQte.setCellValueFactory(new PropertyValueFactory("nombreExemplaires"));
-        colInvTitre = new TableColumn<Livre, String>("Titre");
-        colInvTitre.setCellValueFactory(new PropertyValueFactory("titre"));
     	
     	pnInv.toFront();
         lblHead.setText("Inventaire");
@@ -250,19 +274,7 @@ public class AppController {
 
     @FXML
     void ongletMembres(MouseEvent event) {
-    	tabMem = new TableView<Membre>();
-        tabMem.setItems(listeMembres);
-        colIdMem = new TableColumn<Membre, Integer>("Id");
-        colIdMem.setCellValueFactory(new PropertyValueFactory("identifiant"));
-        colNomMem = new TableColumn<Membre, String>("Nom");
-        colNomMem.setCellValueFactory(new PropertyValueFactory("nom"));
-        colPrenomMem = new TableColumn<Membre, String>("Prénom");
-        colPrenomMem.setCellValueFactory(new PropertyValueFactory("prenom"));
-        colTelMem = new TableColumn<Membre, String>("Téléphone");
-        colTelMem.setCellValueFactory(new PropertyValueFactory("numeroTelephone"));
-        colCNIMem = new TableColumn<Membre, String>("CNI");
-        colCNIMem.setCellValueFactory(new PropertyValueFactory("numeroCNI"));
-        
+
     	pnMem.toFront();
         lblHead.setText("Membres");
     }
