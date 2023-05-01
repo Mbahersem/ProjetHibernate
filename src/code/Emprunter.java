@@ -42,10 +42,10 @@ public interface Emprunter {
         Session session = Login.sessionFactory.openSession();
         session.beginTransaction();
         session.save(new Emprunt(livre, membre));
+        livre.setNombreExemplaires(livre.getNombreExemplaires() - 1);
         session.getTransaction().commit();
         session.close();
 
-        livre.setNombreExemplaires(livre.getNombreExemplaires() - 1);
            
         return true;
    
