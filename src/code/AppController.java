@@ -86,75 +86,75 @@ public class AppController {
     private Pane pnMem; 
     
     
-    @FXML
-    private TableView<Membre> tabMem = new TableView<Membre>();
-    tabMem.setItems(listeMembres);
+    // @FXML
+    // private TableView<Membre> tabMem = new TableView<Membre>();
+    // tabMem.setItems(listeMembres);
     
-    @FXML
-    private TableColumn<Membre, Integer> colIdMem = new TableColumn<Membre, Integer>("Id");
-    colIdMem.setCellValueFactory(new PropertyValueFactory("identifiant"));
+    // @FXML
+    // private TableColumn<Membre, Integer> colIdMem = new TableColumn<Membre, Integer>("Id");
+    // colIdMem.setCellValueFactory(new PropertyValueFactory("identifiant"));
     
-    @FXML
-    private TableColumn<Membre, String> colNomMem = new TableColumn<Membre, String>("Nom");
-    colNomMem.setCellValueFactory(new PropertyValueFactory("nom"));
+    // @FXML
+    // private TableColumn<Membre, String> colNomMem = new TableColumn<Membre, String>("Nom");
+    // colNomMem.setCellValueFactory(new PropertyValueFactory("nom"));
     
-    @FXML
-    private TableColumn<Membre, String> colPrenomMem = new TableColumn<Membre, String>("Prénom");
-    colPrenomMem.setCellValueFactory(new PropertyValueFactory("prenom"));
+    // @FXML
+    // private TableColumn<Membre, String> colPrenomMem = new TableColumn<Membre, String>("Prénom");
+    // colPrenomMem.setCellValueFactory(new PropertyValueFactory("prenom"));
     
-    @FXML
-    private TableColumn<Membre, String> colTelMem = new TableColumn<Membre, String>("Téléphone");
-    colTelMem.setCellValueFactory(new PropertyValueFactory("numeroTelephone"));
+    // @FXML
+    // private TableColumn<Membre, String> colTelMem = new TableColumn<Membre, String>("Téléphone");
+    // colTelMem.setCellValueFactory(new PropertyValueFactory("numeroTelephone"));
     
-    @FXML
-    private TableColumn<Membre, String>  colCNIMem = new TableColumn<Membre, String>("CNI");
-    colCNIMem.setCellValueFactory(new PropertyValueFactory("numeroCNI"));
+    // @FXML
+    // private TableColumn<Membre, String>  colCNIMem = new TableColumn<Membre, String>("CNI");
+    // colCNIMem.setCellValueFactory(new PropertyValueFactory("numeroCNI"));
 
 
-    @FXML
-    private TableView<Emprunt> tabEmp = new TableView<Emprunt>();
-    tabEmp.setItems(listeEmprunts);
+    // @FXML
+    // private TableView<Emprunt> tabEmp = new TableView<Emprunt>();
+    // tabEmp.setItems(listeEmprunts);
 
-    @FXML
-    private TableColumn<Emprunt, Date> colDateEmp = new TableColumn<Emprunt, Date>("Date d'emprunt");
-    colDateEmp.setCellValueFactory(new PropertyValueFactory("dateEmprunt"));
+    // @FXML
+    // private TableColumn<Emprunt, Date> colDateEmp = new TableColumn<Emprunt, Date>("Date d'emprunt");
+    // colDateEmp.setCellValueFactory(new PropertyValueFactory("dateEmprunt"));
 
-    @FXML
-    private TableColumn<Emprunt, Date> colDateRend = new TableColumn<Emprunt, Date>("Date de rendu");
-    colDateEmp.setCellValueFactory(new PropertyValueFactory("dateRendu"));
+    // @FXML
+    // private TableColumn<Emprunt, Date> colDateRend = new TableColumn<Emprunt, Date>("Date de rendu");
+    // colDateEmp.setCellValueFactory(new PropertyValueFactory("dateRendu"));
     
-    @FXML
-    private TableColumn<Emprunt, Integer> colIdEmp = new TableColumn<Emprunt, Integer>("Id Emprunt");
-    colIdEmp.setCellValueFactory(new PropertyValueFactory("identifiant"));
+    // @FXML
+    // private TableColumn<Emprunt, Integer> colIdEmp = new TableColumn<Emprunt, Integer>("Id Emprunt");
+    // colIdEmp.setCellValueFactory(new PropertyValueFactory("identifiant"));
 
-    @FXML
-    private TableColumn<Emprunt, Integer> colIdLivre = new TableColumn<Emprunt, Integer>("Id Livre");
-    colIdLivre.setCellValueFactory(new PropertyValueFactory("livre.getIdentifiant()"));
+    // @FXML
+    // private TableColumn<Emprunt, Integer> colIdLivre = new TableColumn<Emprunt, Integer>("Id Livre");
+    // colIdLivre.setCellValueFactory(new PropertyValueFactory("livre.getIdentifiant()"));
 
-    @FXML
-    private TableColumn<Emprunt, Integer> colIdEmMem = new TableColumn<Emprunt, Integer>("Id Membre");
-    colIdEmMem.setCellValueFactory(new PropertyValueFactory("membre.getIdentifiant()"));
+    // @FXML
+    // private TableColumn<Emprunt, Integer> colIdEmMem = new TableColumn<Emprunt, Integer>("Id Membre");
+    // colIdEmMem.setCellValueFactory(new PropertyValueFactory("membre.getIdentifiant()"));
     
     
-    @FXML
-    private TableView<Livre> tabInv = new TableView<Livre>() ;
-    tabInv.setItems(listeLivres);
+    // @FXML
+    // private TableView<Livre> tabInv = new TableView<Livre>() ;
+    // tabInv.setItems(listeLivres);
     
-    @FXML
-    private TableColumn<Livre, Integer> colInvIdLiv = new TableColumn<Livre, Integer>("Id Livre");
-    colInvIdLiv.setCellValueFactory(new PropertyValueFactory("identifiant"));
+    // @FXML
+    // private TableColumn<Livre, Integer> colInvIdLiv = new TableColumn<Livre, Integer>("Id Livre");
+    // colInvIdLiv.setCellValueFactory(new PropertyValueFactory("identifiant"));
     
-    @FXML
-    private TableColumn<Livre, String> colInvAuteur = new TableColumn<Livre, String>("Auteur");
-    colInvAuteur.setCellValueFactory(new PropertyValueFactory("auteur"));
+    // @FXML
+    // private TableColumn<Livre, String> colInvAuteur = new TableColumn<Livre, String>("Auteur");
+    // colInvAuteur.setCellValueFactory(new PropertyValueFactory("auteur"));
 
-    @FXML
-    private TableColumn<Livre, Integer> colInvQte = TableColumn<Livre, Integer>("Nombre d'exemplaires");
-    colInvQte.setCellValueFactory(new PropertyValueFactory("nombreExemplaires"));
+    // @FXML
+    // private TableColumn<Livre, Integer> colInvQte = TableColumn<Livre, Integer>("Nombre d'exemplaires");
+    // colInvQte.setCellValueFactory(new PropertyValueFactory("nombreExemplaires"));
 
-    @FXML
-    private TableColumn<Livre, String> colInvTitre = TableColumn<Livre, String>("Titre");
-    colInvTitre.setCellValueFactory(new PropertyValueFactory("titre"));
+    // @FXML
+    // private TableColumn<Livre, String> colInvTitre = TableColumn<Livre, String>("Titre");
+    // colInvTitre.setCellValueFactory(new PropertyValueFactory("titre"));
 
     @FXML
     private TextField tfCNI;
@@ -199,16 +199,16 @@ public class AppController {
         tabMem.refresh();
     }
 
-    @FXML
-    void ajouterEmprunt(MouseEvent event) {
+    // @FXML
+    // void ajouterEmprunt(MouseEvent event) {
         
-        int livre = Integer.parseInt(tfEmpLiv.getText());
-        int membre = Integer.parseInt(tfEmpMem.getText());
+    //     int livre = Integer.parseInt(tfEmpLiv.getText());
+    //     int membre = Integer.parseInt(tfEmpMem.getText());
 
-        if (Emprunter.emprunter(livre,membre)) {
+    //     if (Emprunter.emprunter(livre,membre)) {
              
-        }
-    }
+    //     }
+    // }
 
 
     @FXML

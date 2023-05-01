@@ -16,13 +16,15 @@ public class LogController {
     public void connecter(ActionEvent event) {
 
         String identifiant = tfId.getText();
-        String motDePasse = String.valueOf(tfMdp.getPassword());
+        String motDePasse = String.valueOf(tfMdp.getText());
 
         if (Connexion.connecter(identifiant,motDePasse)) {
-            
             App application = new App();
-            application.show();
-            
+            application.show(); 
+        }
+        else {
+        	tfId.setText("Identifiant erroné");
+        	tfMdp.setText("Ou mot de passe oublié");
         }
     }
 }

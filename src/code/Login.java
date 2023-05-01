@@ -1,4 +1,5 @@
 package code;
+import java.io.File;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -19,7 +20,7 @@ public class Login extends Application implements Inscription{
     @Override
     public void start(Stage primaryStage) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+            Parent root = FXMLLoader.load(new File("src/Login.fxml").toURI().toURL());
             Scene scene = new Scene(root);
 
             primaryStage.setTitle("Connexion");
@@ -41,6 +42,7 @@ public class Login extends Application implements Inscription{
         config.setProperty("hibernate.connection.username", "root");
         config.setProperty("hibernate.connection.password", "");
 
+        sessionFactory = config.buildSessionFactory();
 
         launch(args);
     }

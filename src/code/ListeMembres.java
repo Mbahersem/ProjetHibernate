@@ -14,7 +14,7 @@ public interface ListeMembres {
  
     public static List<Membre> afficher() {
 
-        Session session = sessionFactory.openSession();
+        Session session = Login.sessionFactory.openSession();
         session.beginTransaction();
         List<Membre> result = session.createQuery("from Membre").list();
         session.getTransaction().commit();
