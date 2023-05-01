@@ -32,14 +32,14 @@ public interface Emprunter {
             }
         }
 
-
+        return false;
     }
 
     //Save 
     public static boolean enregistrer(Livre livre, Membre membre) {
         
 
-        Session session = sessionFactory.openSession();
+        Session session = Login.sessionFactory.openSession();
         session.beginTransaction();
         session.save(new Emprunt(livre, membre));
         session.getTransaction().commit();

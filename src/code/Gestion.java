@@ -10,7 +10,7 @@ import org.hibernate.cfg.Configuration;
 
 public interface Gestion {
 
-    public default boolean enregistrer(String identifiant, String motDePasse) {
+    public static boolean enregistrer(String identifiant, String motDePasse) {
         
         Session session = Login.sessionFactory.openSession();
         session.beginTransaction();

@@ -4,7 +4,7 @@ import java.sql.Date;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "membre")
+@Table(name = "emprunt")
 public class Emprunt {
     @Id
     @Column(name = "idEmprunt")
@@ -17,7 +17,7 @@ public class Emprunt {
     @JoinColumn(name = "idLivre")
     private Livre livre;
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "idMem")
     private Membre membre;
     
     //Constructors
