@@ -42,19 +42,6 @@
       </VBox>
       <StackPane layoutX="201.0" layoutY="75.0" prefHeight="420.0" prefWidth="546.0">
          <children>
-            <Pane fx:id="pnMem" layoutX="10.0" prefHeight="420.0" prefWidth="498.0">
-               <children>
-                  <TableView fx:id="tabMem" layoutX="4.0" layoutY="17.0" prefHeight="403.0" prefWidth="504.0" styleClass="tab" stylesheets="@style2.css">
-                    <columns>
-                      <TableColumn fx:id="colIdMem" prefWidth="75.0" styleClass="tab" text="Id" />
-                      <TableColumn fx:id="colNomMem" prefWidth="75.0" styleClass="tab" text="Nom" />
-                        <TableColumn fx:id="colPrenomMem" prefWidth="75.0" styleClass="tab" text="Prénom" />
-                        <TableColumn fx:id="colTelMem" prefWidth="75.0" styleClass="tab" text="Téléphone" />
-                        <TableColumn fx:id="colCNIMem" prefWidth="75.0" styleClass="tab" text="CNI" />
-                    </columns>
-                  </TableView>
-               </children>
-            </Pane>
             <Pane fx:id="pnEmprunt" layoutX="10.0" prefHeight="363.0" prefWidth="546.0">
                <children>
                   <TableView fx:id="tabEmp" layoutX="10.0" layoutY="135.0" prefHeight="285.0" prefWidth="498.0" styleClass="tab" stylesheets="@style2.css">
@@ -109,6 +96,8 @@
                   <GridPane layoutX="4.0" layoutY="17.0" prefHeight="116.0" prefWidth="504.0" styleClass="main" stylesheets="@style2.css">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     </columnConstraints>
                     <rowConstraints>
@@ -117,7 +106,7 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Button fx:id="btnActualiserInventaire" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#actualiserLivreTab" stylesheets="@style.css" text="Acutaliser" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Button fx:id="btnActualiserInventaire" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#actualiserLivreTab" stylesheets="@style.css" text="Acutaliser" GridPane.columnIndex="3" GridPane.rowIndex="2" />
                         <Button fx:id="btAjoutLiv" mnemonicParsing="false" onMouseClicked="#ajouterLivre" stylesheets="@style.css" text="Ajouter livre" GridPane.rowIndex="2" />
                         <TextField fx:id="tfInvLiv" prefHeight="26.0" prefWidth="240.0" styleClass="textfield" stylesheets="@style.css" GridPane.columnIndex="1" />
                         <Label alignment="CENTER" contentDisplay="CENTER" text="Id livre" textFill="#fceeee">
@@ -125,8 +114,40 @@
                               <Font name="Candara" size="13.0" />
                            </font>
                         </Label>
+                        <TextField fx:id="tfTitre" prefHeight="26.0" prefWidth="240.0" styleClass="textfield" stylesheets="@style.css" GridPane.columnIndex="3" />
+                        <TextField fx:id="tfAuteur" prefHeight="26.0" prefWidth="240.0" styleClass="textfield" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="tfNbreExemp" prefHeight="26.0" prefWidth="240.0" styleClass="textfield" stylesheets="@style.css" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Titre" textFill="#fceeee" GridPane.columnIndex="2">
+                           <font>
+                              <Font name="Candara" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Auteur" textFill="#fceeee" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Candara" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Nombre d'exemplaires" textFill="#fceeee" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Candara" size="13.0" />
+                           </font>
+                        </Label>
                      </children>
                   </GridPane>
+               </children>
+            </Pane>
+            <Pane fx:id="pnMem" layoutX="10.0" prefHeight="420.0" prefWidth="498.0">
+               <children>
+                  <TableView fx:id="tabMem" layoutX="4.0" layoutY="30.0" prefHeight="390.0" prefWidth="504.0" styleClass="tab" stylesheets="@style2.css">
+                    <columns>
+                      <TableColumn fx:id="colIdMem" prefWidth="75.0" styleClass="tab" text="Id" />
+                      <TableColumn fx:id="colNomMem" prefWidth="75.0" styleClass="tab" text="Nom" />
+                        <TableColumn fx:id="colPrenomMem" prefWidth="75.0" styleClass="tab" text="Prénom" />
+                        <TableColumn fx:id="colTelMem" prefWidth="75.0" styleClass="tab" text="Téléphone" />
+                        <TableColumn fx:id="colCNIMem" prefWidth="75.0" styleClass="tab" text="CNI" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="btnActualiserListeMem" mnemonicParsing="false" stylesheets="@style.css" text="Actualiser" />
                </children>
             </Pane>
             <Pane fx:id="pnInsc" layoutX="10.0" prefHeight="420.0" prefWidth="498.0" styleClass="textfield" stylesheets="@style.css">

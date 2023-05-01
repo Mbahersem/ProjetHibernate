@@ -44,6 +44,18 @@ public class AppController {
     private Button btnActualiserEmp;
 
     @FXML
+    private Button btnActualiserListeMem;
+
+    @FXML
+    private TextField tfAuteur;
+
+    @FXML
+    private TextField tfTitre;
+
+    @FXML
+    private TextField tfNbreExemp;
+
+    @FXML
     private Button btnActualiserInventaire;
 
     @FXML
