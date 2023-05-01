@@ -147,7 +147,7 @@
                         <TableColumn fx:id="colCNIMem" prefWidth="75.0" styleClass="tab" text="CNI" />
                     </columns>
                   </TableView>
-                  <Button fx:id="btnActualiserListeMem" mnemonicParsing="false" stylesheets="@style.css" text="Actualiser" />
+                  <Button fx:id="btnActualiserListeMem" mnemonicParsing="false" onMouseClicked="#actualiserListeMem" stylesheets="@style.css" text="Actualiser" />
                </children>
             </Pane>
             <Pane fx:id="pnInsc" layoutX="10.0" prefHeight="420.0" prefWidth="498.0" styleClass="textfield" stylesheets="@style.css">
