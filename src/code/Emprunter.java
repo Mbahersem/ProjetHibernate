@@ -1,6 +1,6 @@
 package code;
 
-import java.sql.Date;
+import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -13,15 +13,39 @@ import org.hibernate.cfg.Configuration;
 
 public interface Emprunter {
     
-        //Save 
-    public static boolean enregistrer(Date dateEmprunt, Date dateRendu, Livre livre, Membre membre) {
+    public static boolean emprunter(int idLivre, int idMembre) {
+        
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        List<Livre> result1 = session.createQuery("from Livre " +
+                                                        "where idLivre = " + idLivre).list();
+        List<Membre> result2 = session.createQuery("from Membre " +
+                                                        "where id = " + idMembre).list();        
+        session.getTransaction().commit();
+        session.close();
+
+        for (Membre membre : result2) {
+            for (Livre livre : result1) {
+                
+                return enregistrer(livre, membre);
+
+            }
+        }
+
+
+    }
+
+    //Save 
+    public static boolean enregistrer(Livre livre, Membre membre) {
         
 
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        session.save(new Emprunt(dateEmprunt, dateRendu, livre, membre));
+        session.save(new Emprunt(livre, membre));
         session.getTransaction().commit();
         session.close();
+
+        livre.setNombreExemplaires(livre.getNombreExemplaires() - 1);
            
         return true;
    

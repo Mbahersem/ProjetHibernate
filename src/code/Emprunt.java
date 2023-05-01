@@ -23,9 +23,7 @@ public class Emprunt {
     //Constructors
     public Emprunt() {
     }
-    public Emprunt(Date dateEmprunt, Date dateRendu, Livre livre, Membre membre) {
-        this.dateEmprunt = dateEmprunt;
-        this.dateRendu = dateRendu;
+    public Emprunt(Livre livre, Membre membre) {
         this.livre = livre;
         this.membre = membre;
     }

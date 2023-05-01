@@ -123,7 +123,13 @@ public class AppController {
 
     @FXML
     void ajouterEmprunt(MouseEvent event) {
+        
+        int livre = Integer.parseInt(tfEmpLiv.getText());
+        int membre = Integer.parseInt(tfEmpMem.getText());
 
+        if (Emprunter.emprunter(livre,membre)) {
+             
+        }
     }
 
     @FXML
