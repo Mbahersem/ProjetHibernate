@@ -182,12 +182,21 @@ public class AppController {
     void actualiserEmprunt(MouseEvent event) {
 
         listeEmprunts = FXCollections.observableList(ListeEmprunts.afficher());
+        tabEmp.refresh();
     }
 
     @FXML
     void actualiserLivreTab(MouseEvent event) {
 
         listeLivre = FXCollections.observableList(ListeLivres.afficher());
+        tabInv.refresh();
+    }
+
+    @FXML
+    void actualiserListeMem(MouseEvent event) {
+        
+        listeMembres = FXCollections.observableList(ListeMembres.afficher());
+        tabMem.refresh();
     }
 
     @FXML
@@ -201,10 +210,19 @@ public class AppController {
         }
     }
 
+
     @FXML
     void ajouterLivre(MouseEvent event) {
+        
+        String titre = tfTitre.getText();
+        String auteur = tfAuteur.getText();
+        int nombreExemplaires = Integer.parseInt(tfNbreExemp.getText());
 
+        if (Importation.enregistrer(titre,auteur,nombreExemplaires)) {
+            
+        }
     }
+
 
     @FXML
     void ongletEmprunts(MouseEvent event) {
@@ -234,12 +252,6 @@ public class AppController {
     void enregistrer(MouseEvent event) {
     	Login login = new Login();
         login.enregistrer(tfNom.getText(), tfPrenom.getText(), tfTel.getText(), tfCNI.getText());
-    }
-
-    
-    @FXML
-    void actualiserListeMem(MouseEvent event) {
-
     }
 
 }
