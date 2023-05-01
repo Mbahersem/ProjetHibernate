@@ -11,23 +11,16 @@ import org.hibernate.cfg.Configuration;
 
 public interface Inscription {
     
-    public default void ouverture() {
+    // public void ouverture() {
+        
+    // }
+
+    public void enregistrer(String nom, String prenom, String numeroTelephone, String numeroCNI) {
         
     }
 
-    public default boolean enregistrer(String nom, String prenom, String numeroTelephone, String numeroCNI) {
-        
-        Session session = sessionFactory.openSession();
-        session.beginTransaction();
-        session.save(new Membre(nom, prenom, numeroTelephone, numeroCNI));
-        session.getTransaction().commit();
-        session.close();
-        
-        return true;
-    }
+    // public void reset(){
 
-    public default void reset(){
-
-    }
+    // }
     
 }

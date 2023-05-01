@@ -1,3 +1,4 @@
+package code;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -14,7 +15,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Login extends Application{
+public class Login extends Application implements Inscription{
     @Override
     public void start(Stage primaryStage) {
         try {
@@ -28,6 +29,7 @@ public class Login extends Application{
             e.printStackTrace();
         }
     }
+    static SessionFactory sessionFactory;
     
     public static void main(String[] args) {
         Configuration config = new Configuration();
@@ -39,15 +41,17 @@ public class Login extends Application{
         config.setProperty("hibernate.connection.username", "root");
         config.setProperty("hibernate.connection.password", "");
 
-        SessionFactory sessionFactory = config.buildSessionFactory();
-
-        Session session = sessionFactory.openSession();
-        
-        List<code.Membre> membre = session.createQuery("from Membre").list();
-        // List<code.Emprunt> emprunt = session.createQuery("from Emprunt").list();
-        // List<code.Livre> livre = session.createQuery("from Livre").list();
-        System.out.println();
 
         launch(args);
     }
+
+    public void enregistrer(String nom, String prenom, String numeroTelephone, String numeroCNI) {
+        Session session = sessionFactory.openSession();
+    	session.beginTransaction();
+        session.save(new code.Membre(nom, prenom, numeroTelephone, numeroCNI));
+        session.getTransaction().commit();
+        session.close();
+        
+    }
+
 }

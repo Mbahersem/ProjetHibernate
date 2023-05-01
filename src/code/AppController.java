@@ -1,7 +1,6 @@
 
 package code;
 
-
 import java.util.List;
 
 import org.hibernate.Session;
@@ -55,7 +54,31 @@ public class AppController {
     private TableColumn<?, ?> colCNIMem;
 
     @FXML
+    private TableColumn<?, ?> colDateEmp;
+
+    @FXML
+    private TableColumn<?, ?> colDateRend;
+
+    @FXML
+    private TableColumn<?, ?> colIdEmp;
+
+    @FXML
+    private TableColumn<?, ?> colIdLivre;
+
+    @FXML
     private TableColumn<?, ?> colIdMem;
+
+    @FXML
+    private TableColumn<?, ?> colInvAuteur;
+
+    @FXML
+    private TableColumn<?, ?> colInvIdLiv;
+
+    @FXML
+    private TableColumn<?, ?> colInvQte;
+
+    @FXML
+    private TableColumn<?, ?> colInvTitre;
 
     @FXML
     private TableColumn<?, ?> colNomMem;
@@ -91,7 +114,7 @@ public class AppController {
     private TableView<?> tabMem;
 
     @FXML
-    private Label tfCNI;
+    private TextField tfCNI;
 
     @FXML
     private TextField tfEmpLiv;
@@ -103,13 +126,14 @@ public class AppController {
     private TextField tfInvLiv;
 
     @FXML
-    private Label tfNom;
+    private TextField tfNom;
 
     @FXML
-    private Label tfPrenom;
+    private TextField tfPrenom;
 
     @FXML
-    private Label tfTel;
+    private TextField tfTel;
+
     
     @FXML
     void actualiserEmprunt(MouseEvent event) {
@@ -163,7 +187,8 @@ public class AppController {
     
     @FXML
     void enregistrer(MouseEvent event) {
-
+    	Login login = new Login();
+        login.enregistrer(tfNom.getText(), tfPrenom.getText(), tfTel.getText(), tfCNI.getText());
     }
 
 }

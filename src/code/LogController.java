@@ -1,6 +1,4 @@
-
-import code.App;
-import code.Connexion;
+package code;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
