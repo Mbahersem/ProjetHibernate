@@ -26,12 +26,12 @@ public class LogController {
         if (Connexion.connecter(identifiant,motDePasse)) {
             tfId.setText("");
             tfMdp.setText("");
-            lblStatutCon.setText("Connexion r√©ussie !");
+            lblStatutCon.setText("Connexion rÈussie !");
             App application = new App();
             application.show(); 
         }
         else {
-        	lblStatutCon.setText("Identifiant ou mot de passe erron√©, veuillez r√©essayer...");
+        	lblStatutCon.setText("Identifiant ou mot de passe erron, veuillez rÈessayer...");
         }
     }
 }
